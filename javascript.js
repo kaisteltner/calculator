@@ -10,7 +10,7 @@ function substract(a, b) {
 
 function multiply(a, b) {
   // Multiply number a by b and return result.
-
+  return a * b;
 }
 
 function divide(a, b) {
@@ -24,6 +24,12 @@ function divide(a, b) {
 // console.log("0.25 + 0.5 =", add(0.25, 0.5));
 
 // Test substract
-console.log("2 - 5 =", substract(2, 5));
-console.log("2 - -5 =", substract(2, -5));
-console.log("0.25 - 0.5 =", substract(0.25, 0.5));
+// console.log("2 - 5 =", substract(2, 5));
+// console.log("2 - -5 =", substract(2, -5));
+// console.log("0.25 - 0.5 =", substract(0.25, 0.5));
+
+// Test multiply
+console.log("2 * 5 =", multiply(2, 5));
+console.log("0 * -5 =", multiply(0, -5));
+console.log("-1 * -5 =", multiply(-1, -5));
+console.log("0.25 * -0.5 =", multiply(0.25, -0.5));
