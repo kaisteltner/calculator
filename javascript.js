@@ -35,8 +35,8 @@ function divide(a, b) {
 // console.log("0.25 * -0.5 =", multiply(0.25, -0.5));
 
 // Test divide
-console.log("4 / 2 =", divide(4, 2));
-console.log("2 / -1 =", divide(2, -1));
-console.log("-1 / -5 =", divide(-1, -5));
-console.log("-1 / 0 =", divide(-1, 0));
-console.log("0.25 / -0.5 =", divide(0.25, -0.5));
+// console.log("4 / 2 =", divide(4, 2));
+// console.log("2 / -1 =", divide(2, -1));
+// console.log("-1 / -5 =", divide(-1, -5));
+// console.log("-1 / 0 =", divide(-1, 0));
+// console.log("0.25 / -0.5 =", divide(0.25, -0.5));
