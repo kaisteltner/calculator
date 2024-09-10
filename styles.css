@@ -1,21 +1,36 @@
 body {
-  background-color: rgb(62, 118, 103);
+  background-color: rgb(255, 249, 207);
   font-family: monospace, monospace;
+  font-size: 24pt;
+}
+
+.row {
+  gap: 5px;
+  padding-top: 5px;
 }
 
 .container {
   max-width: 450px; /* Begrenzung der maximalen Breite des Grids */
 }
 
+#display {
+  text-align: right;
+}
+
+#display,
 .grid-item {
-  background-color: #919192;
-  color: white;
   border: solid;
   border-color: rgb(90, 90, 90);
   border-radius: 5px;
   border-width: 1px;
+}
+
+.grid-item {
+  background-color: #919192;
   width: 100px;
-  height: 100%;
+  height: 75px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  font-size: 24pt;
 }
