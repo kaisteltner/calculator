@@ -1,9 +1,13 @@
+let num1 = null;
+let num2 = null;
+let operator = null;
+
 function add(a, b) {
   // Add numbers a and b and return result.
   return a + b;
 }
 
-function substract(a, b) {
+function subtract(a, b) {
   // Substract number b from a and return result.
   return a - b;
 }
@@ -16,6 +20,11 @@ function multiply(a, b) {
 function divide(a, b) {
   // Divide number a by b and return result. Returns null for division by 0.
   if (b === 0) {return null} else {return a / b};
+}
+
+function operate(a, b, operator) {
+  // Feed numbers a and b to operator function and return result.
+  return operator(a, b);
 }
 
 // Test add
@@ -39,4 +48,9 @@ function divide(a, b) {
 // console.log("2 / -1 =", divide(2, -1));
 // console.log("-1 / -5 =", divide(-1, -5));
 // console.log("-1 / 0 =", divide(-1, 0));
-// console.log("0.25 / -0.5 =", divide(0.25, -0.5));
+// console.log("0.25 / -0.5 =", divide(0.25, -0.5))
+
+// num1 = 4;
+// num2 = -2;
+// operator = subtract;
+// console.log(operate(num1, num2, operator))
