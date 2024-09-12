@@ -5,7 +5,6 @@ let displayVal = 0;
 
 display = document.getElementById('display');
 btnsNum = document.getElementsByClassName('btn-num')
-console.log(btnsNum);
 
 function add(a, b) {
   // Add numbers a and b and return result.
@@ -77,5 +76,9 @@ function btnNumCallback() {
 for (let btnNum of btnsNum) {
   btnNum.addEventListener('click', btnNumCallback);
 }
+document.querySelector('.btn-delete').addEventListener('click', () => {
+  displayVal = 0;
+  display.value = displayVal;
+})
 
 resetCalculator();
