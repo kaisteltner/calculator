@@ -35,9 +35,13 @@ function resetCalculator() {
   num1 = null;
   num2 = null;
   operator = null;
+  resetDisplay();
+  return
+}
+
+function resetDisplay() {
   displayVal = 0;
   display.value = displayVal;
-  return
 }
 
 function btnNumCallback() {
@@ -76,9 +80,6 @@ function btnNumCallback() {
 for (let btnNum of btnsNum) {
   btnNum.addEventListener('click', btnNumCallback);
 }
-document.querySelector('.btn-delete').addEventListener('click', () => {
-  displayVal = 0;
-  display.value = displayVal;
-})
+document.querySelector('.btn-delete').addEventListener('click', resetDisplay);
 
 resetCalculator();
