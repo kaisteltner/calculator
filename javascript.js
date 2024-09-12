@@ -4,6 +4,8 @@ let operator = null;
 let displayVal = 0;
 
 display = document.getElementById('display');
+btnsNum = document.getElementsByClassName('btn-num')
+console.log(btnsNum);
 
 function add(a, b) {
   // Add numbers a and b and return result.
@@ -39,6 +41,11 @@ function resetCalculator() {
   return
 }
 
+function btnNumCallback() {
+  displayVal = displayVal * 10 + Number(this.innerText);
+  display.value = displayVal;
+}
+
 // Test add
 // console.log("2 + 5 =", add(2, 5));
 // console.log("2 + -5 =", add(2, -5));
@@ -66,5 +73,9 @@ function resetCalculator() {
 // num2 = -2;
 // operator = subtract;
 // console.log(operate(num1, num2, operator))
+
+for (let btnNum of btnsNum) {
+  btnNum.addEventListener('click', btnNumCallback);
+}
 
 resetCalculator();
