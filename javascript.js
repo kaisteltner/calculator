@@ -1,6 +1,9 @@
 let num1 = null;
 let num2 = null;
 let operator = null;
+let displayVal = 0;
+
+display = document.getElementById('display');
 
 function add(a, b) {
   // Add numbers a and b and return result.
@@ -25,6 +28,15 @@ function divide(a, b) {
 function operate(a, b, operator) {
   // Feed numbers a and b to operator function and return result.
   return operator(a, b);
+}
+
+function resetCalculator() {
+  num1 = null;
+  num2 = null;
+  operator = null;
+  displayVal = 0;
+  display.value = displayVal;
+  return
 }
 
 // Test add
@@ -54,3 +66,5 @@ function operate(a, b, operator) {
 // num2 = -2;
 // operator = subtract;
 // console.log(operate(num1, num2, operator))
+
+resetCalculator();
