@@ -3,8 +3,13 @@ let num2 = null;
 let operator = null;
 let displayVal = 0;
 
-display = document.getElementById('display');
-btnsNum = document.getElementsByClassName('btn-num')
+const display = document.getElementById('display');
+const btnsNum = document.getElementsByClassName('btn-num');
+const btnAdd = document.querySelector('.btn-add');
+const btnSub = document.querySelector('.btn-subtract');
+const btnMul = document.querySelector('.btn-multiply');
+const btnDiv = document.querySelector('.btn-divide');
+const btnsOperators = [btnAdd, btnSub, btnMul, btnDiv];
 
 function add(a, b) {
   // Add numbers a and b and return result.
@@ -49,37 +54,95 @@ function btnNumCallback() {
   display.value = displayVal;
 }
 
-// Test add
-// console.log("2 + 5 =", add(2, 5));
-// console.log("2 + -5 =", add(2, -5));
-// console.log("0.25 + 0.5 =", add(0.25, 0.5));
+function deactivateOperators() {
+  btnsOperators.forEach(btn => (btn.classList.remove('active')));
+}
 
-// Test substract
-// console.log("2 - 5 =", substract(2, 5));
-// console.log("2 - -5 =", substract(2, -5));
-// console.log("0.25 - 0.5 =", substract(0.25, 0.5));
+function evaluate() {
+  if (num1 !== null && num2 === null) {
+    num2 = displayVal;
+  }
+  if (num1 === null || num2 === null || operator === null) {
+    console.log('Missing data.');
+    return;
+  }
 
-// Test multiply
-// console.log("2 * 5 =", multiply(2, 5));
-// console.log("0 * -5 =", multiply(0, -5));
-// console.log("-1 * -5 =", multiply(-1, -5));
-// console.log("0.25 * -0.5 =", multiply(0.25, -0.5));
+  displayVal = operate(num1, num2, operator);
+  display.value = displayVal;
+  num1 = displayVal;
+  num2 = null;
+  operator = null;
 
-// Test divide
-// console.log("4 / 2 =", divide(4, 2));
-// console.log("2 / -1 =", divide(2, -1));
-// console.log("-1 / -5 =", divide(-1, -5));
-// console.log("-1 / 0 =", divide(-1, 0));
-// console.log("0.25 / -0.5 =", divide(0.25, -0.5))
+  deactivateOperators();
+}
 
-// num1 = 4;
-// num2 = -2;
-// operator = subtract;
-// console.log(operate(num1, num2, operator))
-
+// EventListeners for number buttons
 for (let btnNum of btnsNum) {
   btnNum.addEventListener('click', btnNumCallback);
 }
 document.querySelector('.btn-delete').addEventListener('click', resetDisplay);
+
+// EventListeners for operators
+btnAdd.addEventListener('click', () => {
+  btnAdd.classList.toggle('active');
+  operator = add;
+  
+  // Update variables
+  if (num1 === null) {
+    num1 = displayVal;
+  } else {
+    // Evaluate sum and update display
+  }
+  
+  resetDisplay();
+});
+
+btnSub.addEventListener(
+  'click', () => {
+  btnSub.classList.toggle('active');
+  operator = subtract;
+
+  // Update variables
+  if (num1 === null) {
+    num1 = displayVal;
+  } else {
+    // Evaluate sum and update display
+  }
+
+  resetDisplay();
+});
+
+btnMul.addEventListener(
+  'click', () => {
+  btnMul.classList.toggle('active');
+  operator = multiply;
+
+  // Update variables
+  if (num1 === null) {
+    num1 = displayVal;
+  } else {
+    // Evaluate sum and update display
+  }
+
+  resetDisplay();
+});
+
+btnDiv.addEventListener(
+  'click', () => {
+  btnDiv.classList.toggle('active');
+  operator = divide;
+
+  // Update variables
+  if (num1 === null) {
+    num1 = displayVal;
+  } else {
+    // Evaluate sum and update display
+  }
+
+  resetDisplay();
+});
+
+// Evaluate
+document.querySelector('.btn-equal').addEventListener('click', evaluate)
 
 resetCalculator();

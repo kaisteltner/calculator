@@ -35,3 +35,10 @@ body {
   align-items: center;
   font-size: 24pt;
 }
+
+.btn-operator {
+  background-color: #6e6e93
+}
+.btn-operator.active {
+  background-color: #008062
+}
